@@ -1,5 +1,8 @@
 library(testthat)
 library(covr)
 
-testthat::file_coverage(test_file="test/test_main.R",source_file="../main.R")
-covr::report()
+# Calculate coverage
+coverage <- covr::file_coverage(source_files = "../main.R", test_files = "test/test_main.R")
+
+# Generate the report
+covr::report(coverage)
